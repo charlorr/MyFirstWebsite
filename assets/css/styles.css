@@ -10,6 +10,7 @@
     text-align: center; /* center the text */
     background: var(--main-accent);
     color: black; /* text color */
+    z-index: 0;
 }
 
 .title {
@@ -37,9 +38,9 @@ li {
 
 a {
     display: block;
-    padding: 8px;
+    padding: 20px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 8px;
+    font-size: 20px;
 }
 
 li a {
@@ -51,7 +52,8 @@ li a:hover {
     color: white;
 }
 
-.active {
+/* this doesn't work :( */
+a:active {
     color: white;
 }
 
@@ -60,19 +62,26 @@ li a:hover {
     width: 100%;
     height: 1vh;
     background: black;
+    opacity: .5;
+    margin-top: -0.5vh;
+    z-index: -1;
+    -webkit-filter: blur(.5vh);
 }
 
 .slideshow {
+    position: relative;
+    top: -0.5vh;
     width: 100%;
-    height: 87vh;
+    height: 88vh;
     background: var(--grey);
+    z-index: -2;
 }    
 
 .swingset {
     width: 15vh;
     position: absolute;
     left: 0px;
-    padding: 3.5px;
+    padding: 1vh;
     margin: auto;
 }
 
@@ -93,7 +102,8 @@ p {
 }
 
 .slidePic {
-    height: 87vh;
+    position: relative;
+    height: 88vh;
     display: block;
     margin: auto;
 }
